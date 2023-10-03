@@ -36,5 +36,5 @@ app.get("*", (req, res) => {
 });
 
 app.listen(port, () => {
-	console.log(`Curso | Node.js ${port}`);
+	console.log(`Curso | Node.js:${port}`);
 });
