@@ -6,8 +6,8 @@ const app = express();
 const port = process.env.PORT;
 
 //Handlebar
-app.set("view engine", "hbs");
 hbs.registerPartials(__dirname + "/views/partials");
+app.set("view engine", "hbs");
 
 //Servir Contenido Estatico
 app.use(express.static("public"));
