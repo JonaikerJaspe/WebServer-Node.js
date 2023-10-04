@@ -7,7 +7,7 @@ const path = require("path");
 const hbs = require("hbs");
 const port = process.env.PORT;
 
-hbs.path.join(__dirname, "views", "partials");
+hbs.registerPartials(__dirname + "/views/partials");
 app.set("view engine", "hbs");
 
 //Servir Contenido Estatico
