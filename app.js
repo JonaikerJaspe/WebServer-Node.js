@@ -1,8 +1,8 @@
 require("dotenv").config();
 const express = require("express");
+const app = express();
 
 const hbs = require("hbs");
-const app = express();
 const port = process.env.PORT;
 
 hbs.registerPartials(__dirname + "/views/partials");
@@ -35,5 +35,5 @@ app.get("/elements", (req, res) => {
 // });
 
 app.listen(port, () => {
-	console.log(`Escuchando desde el puerto http://localhost:${port}`);
+	console.log(`Escuchando desde el puerto http://localhost ${port}`);
 });
