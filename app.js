@@ -1,3 +1,11 @@
+require("dotenv").config();
+const express = require("express");
+const { engine } = require("express-handlebars");
+const app = express();
+
+const path = require("path");
+
+const port = process.env.PORT;
 
 app.set("views", path.join(__dirname, "views"));
 app.engine(".hbs", engine({
@@ -17,22 +25,22 @@ app.get("/", (req, res) => {
 		titulo: "Curso - Node.js",
 	});
 });
-// app.get("/generic", (req, res) => {
-// 	res.render("generic", {
-// 		nombre: "Jonaiker Jaspe",
-// 		titulo: "Curso - Node.js",
-// 	});
-// });
-// app.get("/elements", (req, res) => {
-// 	res.render("elements", {
-// 		nombre: "Jonaiker Jaspe",
-// 		titulo: "Curso - Node.js",
-// 	});
-// });
+app.get("/generic", (req, res) => {
+	res.render("generic", {
+		nombre: "Jonaiker Jaspe",
+		titulo: "Curso - Node.js",
+	});
+});
+app.get("/elements", (req, res) => {
+	res.render("elements", {
+		nombre: "Jonaiker Jaspe",
+		titulo: "Curso - Node.js",
+	});
+});
 
-// app.get("*", (req, res) => {
-// 	res.sendFile(__dirname + "/public/404.html");
-// });
+app.get("*", (req, res) => {
+	res.sendFile(__dirname + "/public/back/404.html");
+});
 
 app.listen(port, () => {
 	console.log(`Escuchando desde el puerto http://localhost ${port}`);
