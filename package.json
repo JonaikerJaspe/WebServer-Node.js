@@ -4,14 +4,15 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "start": "node server.js",
-        "nodemon": "nodemon server.js",
+        "start": "node app.js",
+        "nodemon": "nodemon app.js",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "author": "",
     "license": "ISC",
     "dependencies": {
         "express": "^4.16.2",
+        "express-handlebars": "^7.1.2",
         "hbs": "^4.0.1"
     }
 }
