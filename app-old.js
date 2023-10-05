@@ -1,18 +1,22 @@
-const http = require("http");
+const http = require('http');
 
-http
-	.createServer((req, res) => {
-		// res.writeHead(200, { "Content-Type": "application/json" });
-		// res.setHeader("Content-Disposition", "attachment; filename=lista.csv");
-		// res.writeHead(200, { "Content-Type": "application/csv" });
 
-		res.write("Hola Mundo");
-		// res.write("1,  Jonaiker \n");
-		// res.write("2,  Omar\n");
-		// res.write("3,  Jaspe\n");
-		// res.write("4,  Garcias\n");
-		res.end();
-	})
-	.listen(8080);
+http.createServer((req, res) => {
 
-console.log("Estas escuchando en el puerto:", 8080);
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+
+        let salida = {
+            nombre: 'fernando',
+            edad: 32,
+            url: req.url
+        }
+
+        res.write(JSON.stringify(salida));
+        // res.write('Hola Mundo');
+        res.end();
+
+    })
+    .listen(8080);
+
+
+console.log('Escuchando el puerto 8080');
